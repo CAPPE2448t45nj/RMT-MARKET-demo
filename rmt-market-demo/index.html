@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RMT MARKET – digitala produkter med snabb support via Discord." />
+  <title>RMT MARKET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
+
+  <header class="navbar">
+    <a class="brand" href="#top" aria-label="RMT MARKET startsida">
+      <span class="brand-mark">R</span>
+      <span>RMT MARKET</span>
+    </a>
+
+    <nav>
+      <a href="#products">Produkter</a>
+      <a href="#how">Så fungerar det</a>
+      <a href="#support">Support</a>
+    </nav>
+
+    <button class="discord-button" id="discordLogin">
+      <span>◉</span> Logga in med Discord
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">DIGITAL MARKETPLACE</span>
+        <h1>Snabba köp.<br><span>Direkt support.</span></h1>
+        <p>
+          Handla digitala produkter och få personlig hjälp i en privat
+          Discord-ticket efter ditt köp.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#products">Se produkter</a>
+          <a class="secondary-button" href="#how">Hur fungerar det?</a>
+        </div>
+        <div class="trust-row">
+          <span>✓ Säker betalning</span>
+          <span>✓ Discord-support</span>
+          <span>✓ Snabb hantering</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-top">
+          <span>POPULÄRT JUST NU</span>
+          <span class="status-dot">Online</span>
+        </div>
+        <div class="product-preview">
+          <div class="preview-icon">N</div>
+          <div>
+            <strong>Discord Nitro</strong>
+            <small>Digital leverans</small>
+          </div>
+          <b>99 kr</b>
+        </div>
+        <div class="product-preview">
+          <div class="preview-icon">B</div>
+          <div>
+            <strong>Server Boost</strong>
+            <small>För din Discord-server</small>
+          </div>
+          <b>49 kr</b>
+        </div>
+        <div class="product-preview">
+          <div class="preview-icon">V</div>
+          <div>
+            <strong>VPN</strong>
+            <small>Flera alternativ</small>
+          </div>
+          <b>Från 59 kr</b>
+        </div>
+        <div class="ticket-preview">
+          <span>🎫</span>
+          <div>
+            <strong>Ticket skapas efter köp</strong>
+            <small>Orderinformation skickas automatiskt till Discord.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">BUTIK</span>
+          <h2>Välj en produkt</h2>
+        </div>
+        <span class="muted">Fler produkter kommer snart</span>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="how-section" id="how">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">ENKELT OCH SNABBT</span>
+          <h2>Så fungerar det</h2>
+        </div>
+      </div>
+      <div class="steps">
+        <article>
+          <span>01</span>
+          <h3>Logga in</h3>
+          <p>Koppla ditt Discord-konto säkert till beställningen.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Välj och betala</h3>
+          <p>Välj produkt och slutför betalningen med PayPal.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Få en ticket</h3>
+          <p>En privat support-ticket öppnas automatiskt på vår server.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="support-section" id="support">
+      <div>
+        <span class="eyebrow">BEHÖVER DU HJÄLP?</span>
+        <h2>Vi svarar på Discord</h2>
+        <p>Efter köp får du en privat kanal där vårt team kan hjälpa dig.</p>
+      </div>
+      <button class="primary-button" id="joinDiscord">Öppna Discord</button>
+    </section>
+  </main>
+
+  <aside class="cart" id="cart" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <small>DIN BESTÄLLNING</small>
+        <h2>Varukorg</h2>
+      </div>
+      <button id="closeCart" class="icon-button" aria-label="Stäng varukorg">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="total-row">
+        <span>Totalt</span>
+        <strong id="cartTotal">0 kr</strong>
+      </div>
+      <button class="paypal-button" id="paypalCheckout">
+        <span>Pay</span><b>Pal</b>
+      </button>
+      <p class="checkout-note">
+        Demoversion: riktig PayPal-betalning aktiveras när Client ID och backend är konfigurerade.
+      </p>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <button class="floating-cart" id="openCart">
+    Varukorg <span id="cartCount">0</span>
+  </button>
+
+  <div class="toast" id="toast"></div>
+
+  <footer>
+    <div class="brand">
+      <span class="brand-mark">R</span>
+      <span>RMT MARKET</span>
+    </div>
+    <p>© 2026 RMT MARKET. Alla rättigheter förbehållna.</p>
+    <div>
+      <a href="#">Köpvillkor</a>
+      <a href="#">Integritet</a>
+      <a href="#">Återbetalning</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
