@@ -127,7 +127,7 @@ overlay.addEventListener("click", closeCart);
 
 document.getElementById("discordLogin").addEventListener("click", () => {
   window.location.href = "https://discord.com/oauth2/authorize?client_id=1535222329225904258&response_type=code&redirect_uri=https%3A%2F%2Fcappe2448t45nj.github.io%2FRMT-MARKET-demo%2F&scope=identify";
-});
+})
 
 document.getElementById("joinDiscord").addEventListener("click", () => {
   window.open("https://discord.gg/eA5tjx9V8", "_blank");
@@ -140,3 +140,4 @@ document.getElementById("paypalCheckout").addEventListener("click", () => {
 
 renderProducts();
 updateCart();
+ 
